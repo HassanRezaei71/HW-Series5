@@ -11,7 +11,8 @@ body{
     background-color: #e8e8e8;
 }
 
-#email{
+#email,
+#phone{
     width: 30%;
     padding: 6px 8px;
     outline: none;
@@ -37,9 +38,10 @@ body{
     padding: 15px;
     border-radius: 10px;
     color: #a4a4a4;
+    margin-bottom: 20px;
 }
 
-#valid{
+.btn{
     width: 120px;
     height: 35px;
     background-color: #7aafff;
@@ -57,7 +59,8 @@ body{
     background-color: rgba(122, 175, 255, 0.8);
 }
 
-#result-valid{
+#result-valid,
+#result-valid-phone{
     margin-left: 10px;
     /*color: #ff8d8d;*/
     /*color: #63bdd8;*/
