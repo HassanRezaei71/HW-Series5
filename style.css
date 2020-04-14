@@ -12,7 +12,8 @@ body{
 }
 
 #email,
-#phone{
+#phone,
+#user-name{
     width: 30%;
     padding: 6px 8px;
     outline: none;
@@ -60,7 +61,8 @@ body{
 }
 
 #result-valid,
-#result-valid-phone{
+#result-valid-phone,
+#result-User-name{
     margin-left: 10px;
     /*color: #ff8d8d;*/
     /*color: #63bdd8;*/

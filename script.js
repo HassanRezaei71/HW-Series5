@@ -46,3 +46,32 @@ function checkPhone() {
         document.getElementById("result-valid-phone").style.color = "#ff8d8d";
     }
 }
+
+
+//  (3)
+function checkUserName() {
+    let username = document.getElementById("user-name").value;
+    let result = true;
+    for (let i = 0; i < username.length; i++) {
+        if (!checkChar(username[i])) {
+            result = false;
+            break;
+        }
+    }
+    if (result && (username.length >= 3 && username.length <= 9)) {
+        document.getElementById("result-User-name").innerHTML = "Valid User Name";
+        document.getElementById("result-User-name").style.color = "#2dca4f";
+    } else {
+        document.getElementById("result-User-name").innerHTML = "Not Valid User Name";
+        document.getElementById("result-User-name").style.color = "#ff8d8d";
+    }
+}
+
+function checkChar(value) {
+    let result = false;
+    const code = value.charCodeAt();
+    if ((code >= 48 && code <= 57) || (code >= 65 && code <= 90) || (code >= 97 && code <= 122) || code === 95 || code === 46) {
+        result = true;
+    }
+    return result;
+}
