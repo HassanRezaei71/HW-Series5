@@ -13,7 +13,13 @@ body{
 
 #email,
 #phone,
-#user-name{
+#user-name,
+#random-number,
+#merge-objecs,
+#unique-usrename,
+#range-dynamically,
+#shuffle-array,
+#Jalali-date{
     width: 30%;
     padding: 6px 8px;
     outline: none;
@@ -40,6 +46,7 @@ body{
     border-radius: 10px;
     color: #a4a4a4;
     margin-bottom: 20px;
+    word-wrap: break-word;
 }
 
 .btn{
@@ -62,7 +69,13 @@ body{
 
 #result-valid,
 #result-valid-phone,
-#result-User-name{
+#result-User-name,
+#result-random-number,
+#result-merge-objecs,
+#result-unique-username,
+#result-range-dynamically,
+#result-shuffle-array,
+#result-jalali-date{
     margin-left: 10px;
     /*color: #ff8d8d;*/
     /*color: #63bdd8;*/

@@ -1,41 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style/style.css">
+	<script src="script/script.js" defer></script>
 </head>
 <body>
 <section class="section">
-    <p class="question">1) Email Validation</p>
-    <label for="email">Enter Your Email: </label><input type="text" id="email" placeholder="example@domain.com">
-    <div>
-        <button type="submit" id="valid" onclick="checkEmail()" class="btn">Check</button>
-        <span id="result-valid"></span>
-    </div>
+	<p class="question">1) Email Validation</p>
+	<label for="email">Enter Your Email: </label><input type="text" id="email" placeholder="example@domain.com">
+	<div>
+		<button type="submit" id="valid" onclick="checkEmail()" class="btn">Check</button>
+		<span id="result-valid"></span>
+	</div>
 </section>
 
 <section class="section">
-    <p class="question">2) Validate a phone number</p>
-    <label for="phone">Enter Your Phone Number: </label><input type="number" id="phone" placeholder="09300000000">
-    <div>
-        <button type="submit" id="valid-phone" onclick="checkPhone()" class="btn">Check</button>
-        <span id="result-valid-phone"></span>
-    </div>
+	<p class="question">2) Validate a phone number</p>
+	<label for="phone">Enter Your Phone Number: </label><input type="number" id="phone" placeholder="09300000000">
+	<div>
+		<button type="submit" id="valid-phone" onclick="checkPhone()" class="btn">Check</button>
+		<span id="result-valid-phone"></span>
+	</div>
 </section>
 
 <section class="section">
-    <p class="question">3) Validate username</p>
-    <label for="phone">Enter Your User Name: </label><input type="text" id="user-name">
-    <div>
-        <button type="submit" id="valid-user-name" onclick="checkUserName()" class="btn">Check</button>
-        <span id="result-User-name"></span>
-    </div>
+	<p class="question">3) Validate username</p>
+	<label for="user-name">Enter Your User Name: </label><input type="text" id="user-name" placeholder="username">
+	<div>
+		<button type="submit" id="valid-user-name" onclick="checkUserName()" class="btn">Check</button>
+		<span id="result-User-name"></span>
+	</div>
 </section>
+
+<section class="section">
+	<p class="question">4) Unique username</p>
+	<label for="unique-usrename">Enter Your User Name: </label><input type="text" id="unique-usrename">
+	<div>
+		<button type="submit" id="unique-usrename-btn" onclick="uniqueUserName()" class="btn">Check</button>
+		<span id="result-unique-username"></span>
+	</div>
+</section>
+
+<section class="section">
+	<p class="question">5) Random unique numbers</p>
+	<label for="random-number">Enter Count Number: </label><input type="number" id="random-number">
+	<div>
+		<button type="submit" id="random-number-btn" onclick="randomNumber()" class="btn">Check</button>
+		<span id="result-random-number"></span>
+	</div>
+</section>
+
+
+<section class="section">
+	<p class="question">6) Merged objects</p>
+	<label for="merge-objecs">Enter Array Of Objects: </label><input type="text" id="merge-objecs" disabled placeholder="[{a:1,b:2},{c:3,d:4}]">
+	<div>
+		<button type="submit" id="merge-objecs-btn" onclick="mergeObjects()" class="btn">Check</button>
+		<span id="result-merge-objecs"></span>
+	</div>
+</section>
+
+<section class="section">
+	<p class="question">7) Map range</p>
+	<label for="range-dynamically">Enter range: </label><input type="text" id="range-dynamically" placeholder="([1, 80], [30, 99.5], 3)">
+	<div>
+		<button type="submit" id="range-dynamically-btn" onclick="mapRange()" class="btn">Check</button>
+		<span id="result-range-dynamically"></span>
+	</div>
+</section>
+
+
+<section class="section">
+	<p class="question">8) Shuffle an Array</p>
+	<label for="shuffle-array">Enter Array: </label><input type="text" id="shuffle-array" placeholder="[25,32,45,98,76]">
+	<div>
+		<button type="submit" id="shuffle-array-btn" onclick="shuffleArray()" class="btn">Check</button>
+		<span id="result-shuffle-array"></span>
+	</div>
+</section>
+
+<section class="section">
+	<p class="question">9) Convert a Gregorian date into Jalalian date</p>
+	<label for="Jalali-date">Enter Date: </label><input type="text" id="Jalali-date">
+	<div>
+		<button type="submit" id="Jalali-date-btn" onclick="jalaliDate()" class="btn">Check</button>
+		<span id="result-jalali-date"></span>
+	</div>
+</section>
+
 </body>
 </html>
