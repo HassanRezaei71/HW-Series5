@@ -1,15 +1,29 @@
+let usernames = [];
+
+async function getUser() {
+    const response = await fetch(
+        "https://raw.githubusercontent.com/jeanphorn/wordlist/master/usernames.txt"
+    )
+    const text = await response.text();
+    usernames = text.replace(/\r/g, '').split("\n");
+}
+
+getUser();
+
 //  (1)
 function checkEmail() {
     let value = document.getElementById("email").value;
     let result = true;
     if (value.indexOf('@') === -1) {
         result = false;
-    } else {
+    }
+    else {
         let parts = value.split('@');
         let domain = parts[1];
         if (domain.indexOf('.') === -1) {
             result = false;
-        } else {
+        }
+        else {
             let domainParts = domain.split('.');
             let ext = domainParts[1];
             if (ext.length > 4 || ext.length < 2) {
@@ -21,7 +35,8 @@ function checkEmail() {
         result = "Not Valid Email";
         document.getElementById("result-valid").innerHTML = result;
         document.getElementById("result-valid").style.color = "#ff8d8d";
-    } else {
+    }
+    else {
         result = "Valid Email";
         document.getElementById("result-valid").innerHTML = result;
         document.getElementById("result-valid").style.color = "#2dca4f";
@@ -42,7 +57,8 @@ function checkPhone() {
     if (result) {
         document.getElementById("result-valid-phone").innerHTML = "Valid Phone Number";
         document.getElementById("result-valid-phone").style.color = "#2dca4f";
-    } else {
+    }
+    else {
         document.getElementById("result-valid-phone").innerHTML = "Not Valid Phone Number";
         document.getElementById("result-valid-phone").style.color = "#ff8d8d";
     }
@@ -62,7 +78,8 @@ function checkUserName() {
     if (result && (username.length >= 3 && username.length <= 9)) {
         document.getElementById("result-User-name").innerHTML = "Valid User Name";
         document.getElementById("result-User-name").style.color = "#2dca4f";
-    } else {
+    }
+    else {
         document.getElementById("result-User-name").innerHTML = "Not Valid User Name";
         document.getElementById("result-User-name").style.color = "#ff8d8d";
     }
@@ -80,6 +97,31 @@ function checkChar(value) {
 
 
 //  (4)
+async function uniqueUserName() {
+    let value = document.getElementById("unique-usrename").value;
+    if (value === "") {
+        document.getElementById("result-unique-username").innerHTML = "Please Enter Value";
+    }
+    else {
+        if (checkChar(value) && (value.length >= 3 && value.length <= 9) && checkUniqUsername(value)) {
+            document.getElementById("result-unique-username").style.color = "#2dca4f";
+            document.getElementById("result-unique-username").innerHTML = "Valid User Name";
+        }
+        else {
+            document.getElementById("result-unique-username").style.color = "#ff8d8d";
+            document.getElementById("result-unique-username").innerHTML = "Not Valid User Name";
+        }
+    }
+}
+
+function checkUniqUsername(value) {
+    for (let i = 0; i < usernames.length; i++) {
+        if (value === usernames[i]) {
+            return false;
+        }
+    }
+    return true;
+}
 
 
 //  (5)
@@ -88,7 +130,8 @@ function randomNumber() {
     let num = document.getElementById("random-number").value;
     if (num === "") {
         result = "Please Enter A Number";
-    } else {
+    }
+    else {
         while (result.length < num) {
             let random = Math.floor(Math.random() * (59999 - 1000)) + 1000;
             if (result.indexOf(random) === -1) {
@@ -119,7 +162,8 @@ function showMapRange(range1, range2, num) {
     if (num < range1[0] || num > range1[1]) {
         document.getElementById("result-range-dynamically").style.color = "#ff8d8d";
         document.getElementById("result-range-dynamically").innerHTML = result;
-    } else {
+    }
+    else {
         result = (num - range1[0]) / (range1[1] - range1[0]) * (range2[1] - range2[0]) + range2[0];
         document.getElementById("result-range-dynamically").style.color = "#2dca4f";
         document.getElementById("result-range-dynamically").innerHTML = result;
@@ -139,10 +183,17 @@ function showShuffleArray(array) {
         array[i] = array[j];
         array[j] = temp;
     }
-    document.getElementById("result-shuffle-array").style.color =  "#2dca4f";
-    document.getElementById("result-shuffle-array").innerHTML =array;
+    document.getElementById("result-shuffle-array").style.color = "#2dca4f";
+    document.getElementById("result-shuffle-array").innerHTML = array;
 }
 
 function shuffleArray() {
-    showShuffleArray([25,32,45,98,76]);
+    showShuffleArray([25, 32, 45, 98, 76]);
+}
+
+
+//  (9)
+function gregorianToJalali(date) {
+    date = new Date(date);
+    return date.toLocaleDateString("fa-IR");
 }
